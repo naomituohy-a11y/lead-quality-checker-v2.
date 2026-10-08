@@ -1,5 +1,7 @@
-streamlit
-pandas
-openpyxl
-rapidfuzz
-phonenumbers
+streamlit>=1.32,<2
+pandas>=2.0,<3
+openpyxl>=3.1,<4
+rapidfuzz>=3,<4
+phonenumbers>=8.13,<10
+pycountry>=24.6,<27
+tldextract>=5.1,<6
