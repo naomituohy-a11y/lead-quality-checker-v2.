@@ -277,3 +277,17 @@ def detect_columns(df: pd.DataFrame) -> Dict[str, str]:
         best_col = ""
         best_score = 0
         for col in df.columns:
+            if col in used_columns:
+                continue
+            header = clean_header(col)
+            if field == "country" and "county" in header.split():
+                continue
+            for alias in aliases:
+                score = score_header(str(col), alias)
+                if score > best_score:
+                    best_score = score
+                    best_col = str(col)
+        if best_col and best_score >= 72:
+            result[field] = best_col
+            used_columns.add(best_col)
+    return result
