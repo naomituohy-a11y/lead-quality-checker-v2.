@@ -1,4 +1,7 @@
-import io
+import os
+if not os.path.exists(".streamlit"):
+    os.makedirs(".streamlit", exist_ok=True)
+    import io
 import re
 import datetime
 import unicodedata
